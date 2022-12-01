@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import Tk, Label, StringVar,Toplevel
+import random
 
 ventana_principal = Tk()
 
@@ -10,8 +11,13 @@ def calcular():
     for k in range(int(b.get())):
         
         for i in range(int(a.get())):
+            n = random.randint(1, 6)
             c.create_rectangle(70+(80*i), 70+(50*k), 150+(80*i),120+(50*k), fill="green",outline="black")
-            c.create_text(70+(80*i),70+(50*k),text="d")
+            c.create_text(90+(80*i),90+(50*k),text=n,font=("Arial",16))
+
+    bt_cuadratica = Button(ventana_principal, text="Calcular", command=calcular)
+    bt_cuadratica.place(x=100,y=150, width=100, height=30)
+    
             
             
 
